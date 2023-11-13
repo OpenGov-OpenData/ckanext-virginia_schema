@@ -5,7 +5,7 @@ import ckan.plugins.toolkit as toolkit
 import ckanext.virginia_schema.helpers as helpers
 import ckanext.virginia_schema.validators as validators
 
-class virginiaSchemaPlugin(plugins.SingletonPlugin):
+class VirginiaSchemaPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IValidators)
