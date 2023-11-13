@@ -1,4 +1,4 @@
-[![Tests](https://github.com/datHere/ckanext-virginia_schema/workflows/Tests/badge.svg?branch=main)](https://github.com/datHere/ckanext-virginia_schema/actions)
+[![Tests](https://github.com/OpenGov-OpenData/ckanext-virginia_schema/workflows/Tests/badge.svg?branch=main)](https://github.com/OpenGov-OpenData/ckanext-virginia_schema/actions)
 
 # ckanext-virginia_schema
 
@@ -43,7 +43,7 @@ To install ckanext-virginia_schema:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/datHere/ckanext-virginia_schema.git
+    git clone https://github.com/OpenGov-OpenData/ckanext-virginia_schema.git
     cd ckanext-virginia_schema
     pip install -e .
 	pip install -r requirements.txt
@@ -73,7 +73,7 @@ None at present
 To install ckanext-virginia_schema for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/datHere/ckanext-virginia_schema.git
+    git clone https://github.com/OpenGov-OpenData/ckanext-virginia_schema.git
     cd ckanext-virginia_schema
     python setup.py develop
     pip install -r dev-requirements.txt
