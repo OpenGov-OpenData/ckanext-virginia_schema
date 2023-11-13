@@ -1,0 +1,31 @@
+{%- set schema = h.scheming_get_dataset_schema(dataset_type) -%}
+{%- set data_collection_timeframe = data.get('data_collection_timeframe', {}) -%}
+
+<!-- check for temproal range in the field value -->
+{% if data_collection_timeframe.value %}
+    {% set start_date = h.get_json_elementdata_collection_timeframe, 'start_date' %}
+    {% set end_date =  h.get_json_elementdata_collection_timeframe, 'end_date' %}
+{% endif %}
+
+<!-- display the start and end date compontents -->
+{%- for subfield in field.field_group -%}
+        {%- if subfield.field_name == 'start_date' -%}
+            {% set subfield_value = start_date or None %}
+        {%- elif subfield.field_name == 'end_date' -%}
+            {% set subfield_value = end_date or None %}
+        {%- endif -%}
+        {% if subfield.preset == 'date' %}
+            {% do subfield.update({'form_snippet': 'date.html'}) %}
+        {% endif %}
+
+        {%- if subfield.field_name is not none -%}
+            {%- snippet 'scheming/form_snippets/date.html',
+                field=subfield,
+                id='field-' + subfield.field_name,
+                data=data,
+                label=subfield.label,
+                errors=errors
+            -%}
+        {%- endif -%}
+
+{%- endfor -%}

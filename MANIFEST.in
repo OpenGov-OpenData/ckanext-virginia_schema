@@ -1,0 +1,5 @@
+include README.rst
+include LICENSE
+include requirements.txt
+recursive-include ckanext/virginia_schema *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/virginia_schema/migration *.ini *.py *.mako

@@ -1,0 +1,14 @@
+# virginia_schema-js:
+#   filter: rjsmin
+#   output: ckanext-virginia_schema/%(version)s-virginia_schema.js
+#   contents:
+#     - js/virginia_schema.js
+#   extra:
+#     preload:
+#       - base/main
+
+# virginia_schema-css:
+#   filter: cssrewrite
+#   output: ckanext-virginia_schema/%(version)s-virginia_schema.css
+#   contents:
+#     - css/virginia_schema.css

@@ -1,0 +1,178 @@
+scheming_version: 3
+dataset_type: dataset
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+dataset_fields:
+  - field_name: title
+    label: Title
+    preset: title
+    form_placeholder: Enter the title of the dataset
+    help_text: A good title includes 'what', 'where', and 'when' (Example Point Locations of Wind Turbines in Eddy County, Derived from  2010 NAIP Imagery).
+    
+  - field_name: name
+    label: URL
+    preset: dataset_slug
+    form_placeholder: Enter a name for the dataset
+
+  - field_name: notes
+    label: Description
+    form_snippet: markdown.html
+    form_placeholder: Enter a description of the dataset
+    help_text: Details about the what, why, when, and how aspects of the data. Please describe whether the data is used for operations, research, regulatory, or other decision purposes. 
+
+  - field_name: tag_string
+    label: Tags/Keywords
+    preset: tag_string_autocomplete
+    form_placeholder: Enter tags for the dataset
+    help_text: Words or phrases that help people find the data.
+
+  - field_name: owner_org
+    label: Organization
+    preset: dataset_organization
+    form_placeholder: Enter the organization
+    help_text: Organization with which the data should be associated.
+
+  - field_name: subdvision
+    label: Subdivision
+    form_placeholder: Enter the subdivision
+    validators: ignore_missing
+    help_text: Subdivision, bureau, program, committee or commission, etc. within the division. If applicable.
+
+  - field_name: contact_name
+    label: Contact Name
+    form_placeholder: Enter the contact name
+    validators: ignore_missing
+    help_text: Point of contact name for data steward.
+
+  - field_name: contact_email
+    label: Contact Email
+    form_placeholder: Enter the contact email
+    validators: ignore_missing
+    help_text: Point of contact email for data steward.
+
+  - field_name: contact_phone
+    label: Contact Phone
+    form_placeholder: Enter the contact phone
+    validators: ignore_missing
+    help_text: Point of contact phone for data steward.
+  
+  - field_name: publication_date
+    label: Publication Date
+    preset: date
+    form_placeholder: Enter the publication date
+    help_text: Date of formal issuance.
+
+  - field_name: data_timeframe
+    label: Data Timeframe
+    form_snippet: null
+    form_placeholder: Enter the data collection timeframe
+    validators: ignore_missing timeframe_validator
+
+  - field_name: start_date
+    label: Data Timeframe Dates:From
+    preset: date
+    display_snippet: null
+    form_placeholder: Enter the start date
+    help_text: Describe the date range within which the data was collected, or if data collection is still ongoing.
+
+  - field_name: end_date
+    label: Data CollTimeframeection Dates:To
+    preset: date
+    display_snippet: null
+    form_placeholder: Enter the end date
+    help_text: Describe the date range within which the data was collected, or if data collection is still ongoing.
+
+  - field_name: update_cadence
+    label: Update Cadence
+    preset: select
+    form_placeholder: Enter the data update cadence
+    help_text: How often is the data published for use (annually, quarterly, monthly, etc.)?.
+    choices: 
+      - label: Ad Hoc
+        value: adhoc
+      - label: Annually
+        value: annually
+      - label: Semi-annually
+        value: semi-annually
+      - label: Quarterly
+        value: quarterly
+      - label: Monthly
+        value: monthly
+      - label: Weekly - Once
+        value: weekly
+      - label: Daily - Multiple
+        value: daily
+      - label: Daily - Once
+        value: dailyonce
+      - label: One-time
+        value: one-time
+
+  - field_name: data_publishing_method
+    label: Data Publishing Method
+    form_snippet: markdown.html
+    validators: ignore_missing
+    form_placeholder: Enter the data publishing method
+    help_text: How is the data published for use (website, print, API, etc.)?
+
+  - field_name: version
+    label: Version
+    form_placeholder: Enter the version
+    validators: ignore_missing
+    help_text: Version of the dataset.
+
+  - field_name: license_id
+    label: License
+    form_snippet: license.html
+    help_text: List the license for the Dataset
+
+  - field_name: geographic_location
+    label: Geographic Location
+    # preset: spatial.html
+    form_placeholder: Enter the geographic location
+    validators: ignore_missing
+    help_text: The geographic area covered by the data.
+  
+  - field_name: source_url
+    label: Source Link
+    form_placeholder: Enter the source URL
+    validators: ignore_missing
+    help_text: Associated website where the data, or information about the data, can be found.
+
+  - field_name: featured_dataset
+    label: Featured Dataset
+    preset: select
+    form_placeholder: Select if this dataset is a featured dataset?
+    help_text: Select if this dataset is a featured dataset?
+    choices: 
+      - label: Yes
+        value: yes
+      - label: No
+        value: no
+
+resource_fields:
+  
+  - field_name: url
+    label: URL
+    preset: resource_url_upload
+
+  - field_name: name
+    label: Name
+    form_placeholder: Enter the title of the resource
+    help_text: A good title includes 'what', 'where', and 'when' (Example Point Locations of Wind Turbines in Eddy County, Derived from  2010 NAIP Imagery).
+
+  - field_name: description
+    label: Description
+    form_snippet: markdown.html
+    form_placeholder: Enter the description of the resource
+    help_text: Details about the what, why, when, and how aspects pf the data. Please describe whether the data is used for operations, research, regulatory, or other decision purposes.
+
+  - field_name: format
+    label: Format
+    preset: resource_format_autocomplete
+    form_placeholder: Enter the format of the resource
+    help_text: The file format of the resource.
+
+
+
+  
