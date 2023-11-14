@@ -17,6 +17,13 @@ class VirginiaSchemaPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('assets','virginia_schema')
 
+        config_['scheming.presets'] = """
+ckanext.scheming:presets.json
+"""
+
+        config_['scheming.dataset_schemas'] = """
+ckanext.virginia_schema:virginia_dataset.yaml
+"""
 
     # ITemplateHelpers
     def get_helpers(self):
