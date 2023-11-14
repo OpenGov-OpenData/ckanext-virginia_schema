@@ -145,10 +145,10 @@ dataset_fields:
     form_placeholder: Select if this dataset is a featured dataset?
     help_text: Select if this dataset is a featured dataset?
     choices:
-      - label: No
-        value: no
-      - label: Yes
-        value: yes
+      - label: 'No'
+        value: 'no'
+      - label: 'Yes'
+        value: 'yes'
 
 resource_fields:
   
