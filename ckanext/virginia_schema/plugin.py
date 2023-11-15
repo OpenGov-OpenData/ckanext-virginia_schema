@@ -29,6 +29,7 @@ ckanext.virginia_schema:virginia_dataset.yaml
     def get_helpers(self):
         return {
             'get_json_element': helpers.get_json_element,
+            'is_data_dict_active': helpers.is_data_dict_active,
         }
     
     # IValidators
