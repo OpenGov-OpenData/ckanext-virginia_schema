@@ -67,7 +67,7 @@ dataset_fields:
     label: Data Timeframe
     form_snippet: null
     form_placeholder: Enter the data collection timeframe
-    validators: timeframe_validator
+    validators: timeframe_validator ignore_missing
 
   - field_name: start_date
     label: Data Timeframe Dates:From
