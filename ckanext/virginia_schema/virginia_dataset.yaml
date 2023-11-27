@@ -63,11 +63,11 @@ dataset_fields:
     form_placeholder: Enter the publication date
     help_text: Date of formal issuance.
 
-  - field_name: data_timeframe
+  - field_name: date_timeframe
     label: Data Timeframe
     form_snippet: null
     form_placeholder: Enter the data collection timeframe
-    validators: ignore_missing timeframe_validator
+    validators: timeframe_validator ignore_missing
 
   - field_name: start_date
     label: Data Timeframe Dates:From

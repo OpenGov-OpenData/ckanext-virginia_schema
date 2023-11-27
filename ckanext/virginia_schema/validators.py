@@ -16,7 +16,10 @@ h = tk.h
 
 
 def timeframe_validator(keys, flattened_data, errors, context):
-
+    """
+    Validate that the date_from is before date_to
+    Set Date Timeframe to a single field
+    """
     data = unflatten(flattened_data)
     extras = flattened_data.get(('__extras',), {}) or None
     if extras:
