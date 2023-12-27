@@ -1,4 +1,5 @@
 {% extends "package/resource_read.html" %}
+{% set res_info = h.opendata_theme_resource_info(resource.id) %}
 
 {%- set exclude_fields = [
     'name',
@@ -74,7 +75,19 @@
             <td>{% snippet "snippets/license.html", pkg_dict=pkg, text_only=True %}</td>
           </tr>
         {%- endblock -%}
-#}
+#}      {% block resource_columns %}
+          <tr>
+            <th scope="row">{{ _('Columns') }}</th>
+            <td>{{ res_info.get('columns')}}</td>
+          </tr>
+        {% endblock %}
+        {% block resource_rows %}
+          <tr>
+            <th scope="row">{{ _('Rows') }}</th>
+            <td>{{ res_info.get('rows')}}</td>
+          </tr>
+        {% endblock %}
+       
         {%- block resource_fields -%}
           {%- for field in schema.resource_fields -%}
             {%- if field.field_name not in exclude_fields
