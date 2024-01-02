@@ -76,16 +76,20 @@
           </tr>
         {%- endblock -%}
 #}      {% block resource_columns %}
-          <tr>
-            <th scope="row">{{ _('Columns') }}</th>
-            <td>{{ res_info.get('columns')}}</td>
-          </tr>
+          {% if res_info.get('columns') %}
+            <tr>
+              <th scope="row">{{ _('Columns') }}</th>
+              <td>{{ res_info.get('columns')}}</td>
+            </tr>
+          {% endif %}
         {% endblock %}
         {% block resource_rows %}
-          <tr>
-            <th scope="row">{{ _('Rows') }}</th>
-            <td>{{ res_info.get('rows')}}</td>
-          </tr>
+          {% if res_info.get('rows') %}
+            <tr>
+              <th scope="row">{{ _('Rows') }}</th>
+              <td>{{ res_info.get('rows')}}</td>
+            </tr>
+          {% endif %}
         {% endblock %}
        
         {%- block resource_fields -%}
